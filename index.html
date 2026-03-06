@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Member Card Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts Import -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&family=Montserrat:wght@400;600&family=Orbitron:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>3D Member Card Generator</h1>
+    <p class="subtitle">Create stunning 3D member cards with custom themes</p>
+
+    <div class="content">
+      <!-- Card Preview -->
+      <div class="card-container">
+        <div class="perspective">
+          <div id="card" class="card">
+            <div class="card-body front">
+              <div class="glare"></div>
+              <!-- Logo + Text -->
+              <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <div class="logo-text">
+                  <p class="club-pass">MEMBER ID CARD</p>
+                  <p class="rialo">RIALO</p>
+                </div>
+              </div>
+              <!-- Center Info -->
+              <div class="member-info">
+                <h2 id="center-name">MIKASA ENIX</h2>
+                <p class="member-subtext">MEMBER</p>
+                <p id="member-id-display" class="member-id">Member ID: 00123</p>
+                <p id="join-date-display" class="join-date">Date Join: --</p>
+              </div>
+
+              <div class="bottom-right">
+                <div class="photo" id="photo-container">
+                  <img id="photo" src="https://placehold.co/120x120/cccccc/666666?text=PHOTO" alt="Photo">
+                </div>
+              </div>
+
+              <div class="pattern"></div>
+            </div>
+
+            <div class="card-body back">
+              <div class="back-content">
+                <div class="back-logo">
+                  <img src="logo.png" alt="Logo">
+                </div>
+                <div class="back-text">
+                  <p>Thank you for being a valued member!</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <label>Member Name</label>
+        <input type="text" id="member-name" placeholder="Enter member name" maxlength="25" />
+
+        <label>Member ID</label>
+        <input type="text" id="member-id" placeholder="Enter member ID (e.g., 00123)" maxlength="10" />
+
+        <label>Date Join</label>
+        <input type="date" id="join-date" />
+
+        <label>Member Name Color</label>
+        <input type="color" id="name-color" value="#ffffff" />
+
+        <label>Member Subtext Color</label>
+        <input type="color" id="subtext-color" value="#ffffff" />
+
+        <label>Member ID Color</label>
+        <input type="color" id="id-color" value="#ffffff" />
+
+        <label>Date Join Color</label>
+        <input type="color" id="date-color" value="#ffffff" />
+
+        <label>Font Style</label>
+        <select id="font-style">
+          <option value="'Inter', sans-serif">Inter</option>
+          <option value="'Poppins', sans-serif">Poppins</option>
+          <option value="'Montserrat', sans-serif">Montserrat</option>
+          <option value="'Orbitron', sans-serif">Orbitron</option>
+          <option value="'Playfair Display', serif">Playfair Display</option>
+        </select>
+
+        <label>Member Photo</label>
+        <input type="file" id="upload" accept="image/*" />
+        <p id="upload-success"></p>
+
+        <label>Background Image</label>
+        <input type="file" id="background-upload" accept="image/*" />
+        <p id="background-upload-success"></p>
+
+        <label>Back Background Image flip</label>
+        <input type="file" id="back-background-upload" accept="image/*" />
+        <p id="back-background-upload-success"></p>
+
+        <label>Custom Gradient</label>
+        <input type="color" id="gradient-start" value="#ffffff" />
+        <input type="color" id="gradient-end" value="#000000" />
+
+        <button id="flip-card">Flip Card</button>
+        <button id="download">Download as PNG</button>
+        <p class="info">Hover over the card to see the 3D effect</p>
+      </div>
+
+      <!-- Themes -->
+      <div class="themes-section">
+        <label>Choose Theme</label>
+        <div id="themes" class="themes"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
